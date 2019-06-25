@@ -1,1 +1,108 @@
+-------------CREACIÓN DE TABLAS
+
+
+B_ORDEN
+
+
+B_ORDEN_EXAMEN_RESULTADO
+
+B_RESULTADO_CUANTITATIVO
+
+CREATE EXTERNAL TABLE chopo.resultadoCuantitativo_ext(
+   KORDENRESULTADO string,
+   SLOGICO string,
+   NRESULTADO string,
+   UCONCENTRACION string,
+   CLIMITELABORATORIO string,
+   UCONVERTIDO string,
+   BCONVERTIDO string,
+   CMEDIDA string,
+   SRESULTADO string,
+   CUSUARIOMODI string,
+   DMODIFICACION string,
+   SMEDIDA string)
+ROW FORMAT DELIMITED
+FIELDS TERMINATED BY '|'
+LINES TERMINATED BY '\n'
+STORED AS TEXTFILE 
+LOCATION '/user/chopo/resultadoCuantitativo'
+tblproperties ('skip.header.line.count'='1');
+
+CREATE TABLE chopo.resultadoCuantitativo(
+   KORDENRESULTADO int,
+   SLOGICO string,
+   NRESULTADO int,
+   UCONCENTRACION string,
+   CLIMITELABORATORIO int,
+   UCONVERTIDO string,
+   BCONVERTIDO int,
+   CMEDIDA int,
+   SRESULTADO int,
+   CUSUARIOMODI int,
+   DMODIFICACION data,
+   SMEDIDA string)
+FIELDS TERMINATED BY '|'
+LINES TERMINATED BY '\n'
+STORED AS TEXTFILE;
+
+
+
+B_RESULTADO_ORDINAL 
+
+CREATE EXTERNAL TABLE chopo.resultadoOrdinal_ext(
+   KORDENRESULTADO string,
+   CGRUPOORDINAL string,
+   CORDINALLABORATORIO string,
+   SORDINAL string,
+   CUSUARIOMODI string,
+   DMODIFICACION string,
+   CLIMITELABORATORIO string,
+   CMEDIDA string,
+   SMEDIDA string)
+ROW FORMAT DELIMITED
+FIELDS TERMINATED BY '|'
+LINES TERMINATED BY '\n'
+STORED AS TEXTFILE 
+LOCATION '/user/chopo/resultadoordinal_ext/'
+tblproperties ('skip.header.line.count'='1');
+
+CREATE TABLE chopo.resultadoOrdinal(
+   KORDENRESULTADO int,
+   CGRUPOORDINAL int,
+   CORDINALLABORATORIO int,
+   SORDINAL string,
+   CUSUARIOMODI int,
+   DMODIFICACION string,
+   CLIMITELABORATORIO int,
+   CMEDIDA int,
+   SMEDIDA string)
+FIELDS TERMINATED BY '|'
+LINES TERMINATED BY '\n'
+STORED AS TEXTFILE; 
+
+
+B_RESULTADO_NARRATIVO 
+
+CREATE EXTERNAL TABLE chopo.resultadoNarrativo_ext(
+   KORDENRESULTADO string,
+   CGRUPOMENSAJE string,
+   CMENSAJELABORATORIO string,
+   SMENSAJE string)
+ROW FORMAT DELIMITED
+FIELDS TERMINATED BY '|'
+LINES TERMINATED BY '\n'
+STORED AS TEXTFILE 
+LOCATION '/user/chopo/resultadoNarrativo'
+tblproperties ('skip.header.line.count'='1');
+
+
+CREATE TABLE chopo.resultadoNarrativo(
+   KORDENRESULTADO int,
+   CGRUPOMENSAJE int,
+   CMENSAJELABORATORIO string,
+   SMENSAJE string);
+FIELDS TERMINATED BY '|'
+LINES TERMINATED BY '\n'
+STORED AS TEXTFILE; 
+
 
