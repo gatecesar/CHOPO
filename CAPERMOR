@@ -67,7 +67,7 @@ LOCATION '/user/chopo/resultadoordinal_ext/'
 tblproperties ('skip.header.line.count'='1');
 
 CREATE TABLE chopo.resultadoOrdinal(
-   KORDENRESULTADO int,
+   KORDENRESULTADO int ,
    CGRUPOORDINAL int,
    CORDINALLABORATORIO int,
    SORDINAL string,
@@ -75,7 +75,9 @@ CREATE TABLE chopo.resultadoOrdinal(
    DMODIFICACION string,
    CLIMITELABORATORIO int,
    CMEDIDA int,
-   SMEDIDA string)
+   SMEDIDA string);
+   
+   
 FIELDS TERMINATED BY '|'
 LINES TERMINATED BY '\n'
 STORED AS TEXTFILE; 
