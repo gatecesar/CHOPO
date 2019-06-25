@@ -1,6 +1,29 @@
 
-S
+CREACIÓN DE TABLAS 
 
-ASDASDASDAD
-ASDASD
-ASDHDSKAJHDASKDHASKDASD
+B_ORDEN 
+
+
+B_ORDEN_PRODUCTO
+
+
+
+B_PACIENTE
+
+CREATE EXTERNAL TABLE chopo.paciente(
+    id int, 
+    bpacientefechanac date, 
+    dia int,
+    mes int,
+    anio int,
+    edad int,
+    mail int,
+    bpacientegenero string,
+    cpostalid int,
+    bpacienteregistrofecha date) 
+    ROW FORMAT DELIMITED
+    FIELDS TERMINATED BY '|'
+    LINES TERMINATED BY '\n'
+    STORED AS TEXTFILE LOCATION '/user/chopo/paciente1'
+    tblproperties ('skip.header.line.count'='1');
+
